@@ -1,0 +1,11 @@
+<div class="videoComp">
+  <h2>Video</h2>
+  <input [(ngModel)]="videoUrl" (change)="parseVideo(videoUrl)"/>
+  <div [ngSwitch]="origin">
+    <iframe *ngSwitchCase="'Youtube'" [src]="video"></iframe>
+    <iframe *ngSwitchCase="'Vimeo'" [src]="video"></iframe>
+    <iframe *ngSwitchCase="'DM'" [src]="video"></iframe>
+    <iframe *ngSwitchCase="'Twitch'" [src]="video"></iframe>
+    <p *ngSwitchDefault>Introduce una URL para que se muestre un video</p>
+  </div>
+</div>

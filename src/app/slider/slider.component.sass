@@ -1,0 +1,84 @@
+@import "~src/styles"
+
+$marginBetweenThumb: 10px
+
+.slider
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: space-evenly
+
+.thumbnails
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-wrap: wrap
+  margin-left: $marginBetweenThumb
+  margin-top: $marginBetweenThumb
+
+  img
+    max-width: calc(100vw / 4 - #{$marginBetweenThumb})
+    @media screen and (min-width: $break-large)
+      max-width: calc(#{$break-large} / 4 - #{$marginBetweenThumb})
+    margin-right: $marginBetweenThumb
+    margin-bottom: $marginBetweenThumb
+
+.preview
+  display: flex
+  justify-content: space-around
+  align-items: center
+  margin: 2em
+  max-width: 100%
+  @media screen and (min-width: $break-large)
+    max-width: $break-large
+
+  .rightButton
+    max-width: 50%
+    width: auto
+    height: 100%
+    right: 32px
+    top: 32px
+    opacity: 0.1
+
+    &:hover
+      opacity: 0.5
+
+    &:before
+      margin-left: -100px
+      right: 15px
+      content: '>'
+      height: 33px
+      width: 2px
+      color: white
+      background-color: black
+      font-size: 10em
+
+
+  .leftButton
+    max-width: 50%
+    width: auto
+    height: 100%
+    right: 32px
+    top: 32px
+    opacity: 0.1
+
+    &:hover
+      opacity: 0.5
+
+    &:after
+      margin-right: -100px
+      position: relative
+      left: 15px
+      content: '<'
+      height: 33px
+      width: 20px
+      color: white
+      background-color: black
+      font-size: 10em
+
+
+  .viewportImg
+    max-width: 100%
+
+
+

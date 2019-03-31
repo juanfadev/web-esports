@@ -1,0 +1,12 @@
+<div class="slider">
+  <div class="thumbnails">
+    <div *ngFor="let i of slider">
+      <img [src]="i"/>
+    </div>
+  </div>
+  <div class="preview">
+    <a class="leftButton" (click)="left($event)"></a>
+    <img class="viewportImg" [src]="imgSrc"/>
+    <a class="rightButton" (click)="right($event)">></a>
+  </div>
+</div>

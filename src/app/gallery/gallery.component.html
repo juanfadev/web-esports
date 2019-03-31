@@ -1,0 +1,11 @@
+<div class="gallery">
+  <div class="thumbnails">
+    <img src="assets/big/img1.jpg" (click)="loadImage($event)"/>
+    <img src="assets/big/img2.jpg" (click)="loadImage($event)"/>
+    <img src="assets/big/img3.jpg" (click)="loadImage($event)"/>
+  </div>
+  <div [class.active]="active" class="viewport">
+    <a class="closeButton" (click)="close($event)"></a>
+    <img class="viewportImg"[src]="imgSrc"/>
+  </div>
+</div>
