@@ -1,6 +1,14 @@
 $break-large: 768px
+$break-xlarge: 1440px
 
 body
+  vertical-align: baseline
+  outline: none
+  box-sizing: border-box
+  height: 100%
+  background: #f0f0f0
+  color: #313131
+  line-height: 1
   font-family: arial
 
 .page
@@ -8,44 +16,90 @@ body
   flex-direction: column
   min-height: 100vh
 
-@media (min-width: $break-large)
-  .page
+  @media (min-width: $break-large)
     display: grid
-    grid-template-rows: 10% auto auto auto auto auto
     align-items: center
+    justify-content: center
 
 header
-  grid-column: span 3
+  display: flex
   padding: 30px
   text-align: center
-  font-size: 1.4em
-  background-color: #369
+  background-color: #323b40
   color: white
+  flex-direction: column
+  justify-content: center
+  align-content: center
+  @media screen and (min-width: $break-large)
+    flex-direction: row
 
 main
   flex: 1
   padding: 20px
 
 nav
-  background-color: #f90
-  padding: 20px
+  display: inline-flex
+  justify-content: space-around
+  align-content: center
+  width: 100%
+  background: #323b40
+  color: aqua
+  padding: 10px 0 10px 0
+  text-align: center
+  overflow: hidden
+  transition: height 0.5s linear
+
+  a
+    color: inherit
+    line-height: 1.25em
+    text-decoration: none
+    opacity: 0.5
+    font-weight: bold
+
+    &:hover
+      opacity: 1
 
 aside
   padding: 20px
   background-color: #936
 
 footer
-  grid-column: span 3
+  @media (min-width: $break-large)
+    display: grid
+    grid-template-columns: auto auto auto
+  display: flex
+  flex-direction: column
   padding: 30px
   text-align: center
   font-size: 1.4em
-  background-color: #690
+  background-color: #323b40
   color: white
+  margin-top: 1em
+  justify-content: space-around
+  align-content: center
+  li
+    display: block
+    margin-left: -2em
+  a
+    color: aqua
 
 h1
-  margin-bottom: 1em
-  font-size: 1.3em
-  font-weight: bold
+  margin: 1em
 
-body
-  background-color: #F0F0F0
+.component
+  background-color: #b7b7b7
+  border-radius: 15px
+  margin-top: 1em
+  padding: 1em
+  @media screen and (min-width: $break-large)
+    max-width: $break-large
+  @media (min-width: $break-xlarge)
+    max-width: $break-xlarge
+
+.videos
+  @media (min-width: $break-large)
+    display: grid
+    grid-template-columns: auto auto
+  @media (min-width: $break-xlarge)
+    display: grid
+    grid-template-columns: auto auto auto

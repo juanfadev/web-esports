@@ -9,8 +9,8 @@ import {interval, Observable} from 'rxjs';
   styleUrls: ['./shoutcast.component.sass']
 })
 export class ShoutcastComponent implements OnInit {
-  private streamURL = 'http://185.85.28.146/';
-  private shoutcastURL = `${this.streamURL};`;
+  private streamURL = 'http://156.35.95.91:8000/';
+  shoutcastURL = `${this.streamURL};`;
   private shoutcastURLInfo = `${this.streamURL}stats?json=1`;
   private itunesSearchUrl = 'https://itunes.apple.com/search?term=';
   private resolutionRegex = /100x100/;
@@ -45,10 +45,9 @@ export class ShoutcastComponent implements OnInit {
   }
 
   getStreamInfo(url = `${this.streamURL}stats?json=1`, callback = 'callback') {
-    return this.httpClient.jsonp<{ songtitle: string }>(`${url}`, callback).subscribe(res => {
+    this.httpClient.jsonp<{ songtitle: string }>(`${url}`, callback).subscribe(res => {
       this.nameOfSong = res.songtitle;
       return this.getCover(res.songtitle);
-
     });
   }
 

@@ -1,7 +1,6 @@
 <div class="videoComp">
-  <h2>Video</h2>
   <input [(ngModel)]="videoUrl" (change)="parseVideo(videoUrl)"/>
-  <div [ngSwitch]="origin">
+  <div [ngSwitch]="origin" class="videoWrapper">
     <iframe *ngSwitchCase="'Youtube'" [src]="video"></iframe>
     <iframe *ngSwitchCase="'Vimeo'" [src]="video"></iframe>
     <iframe *ngSwitchCase="'DM'" [src]="video"></iframe>

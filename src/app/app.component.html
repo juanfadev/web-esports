@@ -1,18 +1,51 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div class="page">
-  <div style="text-align:center">
-    <h1>
-      Welcome to {{ title }}!
-    </h1>
-    <img width="300" alt="Angular Logo"
-         src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-  </div>
+<header>
+  <h1>Web muestra sobre esports</h1>
   <app-shoutcast></app-shoutcast>
-  <app-gallery></app-gallery>
-  <app-slider></app-slider>
-  <app-video [videoUrl]="'https://www.youtube.com/watch?v=nLJXEX86318'"></app-video>
-  <app-video [videoUrl]="'https://vimeo.com/259730902'"></app-video>
-  <app-video [videoUrl]="'https://www.dailymotion.com/video/x74x87n'"></app-video>
-  <app-video [videoUrl]="'https://www.twitch.tv/esl_csgo'"></app-video>
+</header>
+<nav>
+  <a href="#twitch">CSGO Livestream</a>
+  <a href="#yt">Top 10 Moments eSports</a>
+  <a href="#vim">Demistifying eSports</a>
+  <a href="#dm">Top eSports Players</a>
+</nav>
+<div class="page">
+  <app-gallery class="component"></app-gallery>
+  <app-slider class="component"></app-slider>
+  <div class=" component">
+    <h2>Videos:</h2>
+    <div class="videos">
+      <app-video id="yt" [videoUrl]="'https://www.youtube.com/watch?v=mYG1DA4vd-4'"></app-video>
+      <app-video id="vim" [videoUrl]="'https://vimeo.com/270629847'"></app-video>
+      <app-video id="dm" [videoUrl]="'https://www.dailymotion.com/video/x71w719'"></app-video>
+      <app-video id="twitch" [videoUrl]="'https://www.twitch.tv/esl_csgo'"></app-video>
+    </div>
+  </div>
 </div>
+<footer>
+  <div>
+    <h3>Plataformas de video</h3>
+    <ul>
+      <li><a href="https://www.youtube.com/">Youtube</a></li>
+      <li><a href="https://www.twitch.tv/">Twitch</a></li>
+      <li><a href="https://vimeo.com/">Vimeo</a></li>
+      <li><a href="https://www.dailymotion.com/">DailyMotion</a></li>
+    </ul>
+  </div>
+  <div>
+    <h3>RRSS</h3>
+    <ul>
+      <li><a href="https://www.facebook.com/">Facebook</a></li>
+      <li><a href="https://www.twitter.com/">Twitter</a></li>
+      <li><a href="https://www.youtube.com/">Youtube</a></li>
+    </ul>
+  </div>
+  <div>
+    <h3>Info</h3>
+    <ul>
+      <li>Juan Francisco Piñera Ovejero</li>
+      <li>Email: <a href="mailto:uo244707@uniovi.es">UO244707@uniovi.es</a></li>
+    </ul>
+  </div>
+</footer>
 <router-outlet></router-outlet>

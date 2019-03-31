@@ -1,8 +1,11 @@
-<h2>
-  Shoutcast
-</h2>
-<p>{{nameOfSong}}</p>
-<img [src]="coverUrl"/>
-<audio controls="" style="width:16em">
-  <source [src]="shoutcastURL" type="audio/mpeg">
-</audio>
+<div class="audioComp">
+  <div class="audioPlayer">
+    <img [src]="coverUrl"/>
+    <div class="audioControls">
+      <p>{{nameOfSong}}</p>
+      <audio controls="" autoplay style="width:16em">
+        <source [src]="shoutcastURL" type="audio/mpeg">
+      </audio>
+    </div>
+  </div>
+</div>
