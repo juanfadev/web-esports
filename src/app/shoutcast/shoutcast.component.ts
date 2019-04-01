@@ -35,12 +35,12 @@ export class ShoutcastComponent implements OnInit {
   }
 
   getCover(title) {
-    return this.httpClient.get(this.itunesSearchUrl + title).subscribe((response: any) => {
+    return this.httpClient.jsonp(this.itunesSearchUrl + title, 'callback').subscribe((response: any) => {
       const item = response.results[0];
       if (!item || !item.artworkUrl100) {
         return null;
       }
-      this.coverUrl = item.artworkUrl100
+      this.coverUrl = item.artworkUrl100;
     });
   }
 
